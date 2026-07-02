@@ -1,0 +1,10 @@
+{
+  "name": "Parbat — Digital Identity",
+  "short_name": "Parbat",
+  "description": "Technology, business and continuous learning from Nepal.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F3F5F2",
+  "theme_color": "#14291F",
+  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}
