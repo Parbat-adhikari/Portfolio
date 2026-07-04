@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { nav, profile } from "../data/site";
+import { nav } from "../data/site";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -58,7 +58,7 @@ export default function Navbar() {
               />
             </svg>
           </span>
-          <span>{profile.name}</span>
+       
         </Link>
 
         {/* Desktop links */}
