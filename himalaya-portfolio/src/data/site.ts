@@ -25,10 +25,10 @@ export const profile = {
   // A short personal philosophy line used on the home page.
   philosophy:
     "Move with the patience of the mountains and the curiosity of a beginner.",
-  email: "hello@example.com", // ← your email
+  email: "adhikariparbat96@gmail.comS.com", // ← your email
   // Optional portrait. Drop an image in /public and set the path, e.g. "/portrait.jpg".
   // Leave as null to show an elegant monogram placeholder instead.
-  portrait: null as string | null,
+  portrait: "/portrait.jpg" as string | null,
   available: true, // shows an "available for opportunities" indicator
 };
 
