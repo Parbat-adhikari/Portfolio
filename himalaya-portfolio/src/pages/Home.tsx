@@ -123,7 +123,7 @@ export default function Home() {
                     { href: social.website, Icon: Globe, label: "Website" },
                   ].map(({ href, Icon, label }) => (
                     
-                      key={label}
+                    <a>  key={label}
                       href={href}
                       target="_blank"
                       rel="noreferrer"
