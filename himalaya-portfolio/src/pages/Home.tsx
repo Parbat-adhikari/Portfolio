@@ -36,7 +36,7 @@ const charChild = {
   show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] } },
 };
 
-export default function Home() {
+export default function Home() { 
   const reduce = useReducedMotion();
   useSEO({
     title: `${profile.name} — Technology, Business & Continuous Learning`,
@@ -51,7 +51,7 @@ export default function Home() {
   return (
     <>
       {/* ================================================ HERO */}
-      <section className="relative overflow-hidden pb-16 pt-32 sm:pt-40">
+      <section className="relative overflow-hidden pb-16 pt-24 sm:pt-28">
         <Contour
           className="pointer-events-none absolute inset-x-0 top-10 h-[440px] w-full opacity-70"
           stroke="#2C5646"
@@ -61,32 +61,30 @@ export default function Home() {
           aria-hidden
         />
 
-        <div className="container-page relative">
-          <div className="grid items-center gap-12 lg:grid-cols-[1.5fr_1fr]">
-            <motion.div
-              variants={reduce ? undefined : heroParent}
-              initial={reduce ? false : "hidden"}
-              animate="show"
-            >
-              <motion.p
-                variants={heroChild}
-                className="eyebrow mb-6 flex items-center gap-3"
+       {/* Big animated name */}
+        <div className="container-page relative mb-10">
+          <motion.h1
+            variants={reduce ? undefined : charParent}
+            initial={reduce ? false : "hidden"}
+            animate="show"
+            aria-label={profile.name}
+            className="flex flex-wrap font-display text-[clamp(3rem,10vw,8rem)] font-normal leading-none tracking-tight text-ink select-none"
+          >
+            {profile.name.split("").map((char, i) => (
+              <motion.span
+                key={i}
+                variants={charChild}
+                className={char === " " ? "inline-block w-[0.3em]" : "inline-block"}
               >
-                <span className="h-px w-8 bg-brass/60" aria-hidden />
-                {profile.role}
-              </motion.p>
+                {char}
+              </motion.span>
+            ))}
+            <motion.span variants={charChild} className="inline-block text-brass">.</motion.span>
+          </motion.h1>
+        </div>
 
-              <h1 className="text-fluid-hero font-normal leading-[0.98] text-balance text-ink">
-                <motion.span variants={heroChild} className="block">
-                  {profile.name}.
-                </motion.span>
-                <motion.span
-                  variants={heroChild}
-                  className="mt-2 block font-display text-[0.42em] font-light leading-tight text-slate sm:text-[0.38em]"
-                >
-                  {profile.headline}
-                </motion.span>
-              </h1>
+        <div className="container-page relative">
+          <div className="grid items-center gap-12 lg:grid-cols-[1.5fr_auto]">
 
               <motion.p
                 variants={heroChild}
