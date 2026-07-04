@@ -27,6 +27,14 @@ const heroChild = {
   hidden: { opacity: 0, y: 24 },
   show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } },
 };
+const charParent = {
+  hidden: {},
+  show: { transition: { staggerChildren: 1, delayChildren: 0.3 } },
+};
+const charChild = {
+  hidden: { opacity: 0, y: 10 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] } },
+};
 
 export default function Home() {
   const reduce = useReducedMotion();
