@@ -139,9 +139,9 @@ export default function Home() {
               initial={reduce ? false : { opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="relative mx-auto w-full max-w-xs lg:max-w-none"
+              className="relative mx-auto flex-shrink-0"
             >
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-cloud bg-mist">
+              <div className="relative h-52 w-52 overflow-hidden rounded-full border-2 border-cloud bg-mist shadow-lg sm:h-64 sm:w-64">
                 {profile.portrait ? (
                   <img
                     src={profile.portrait}
