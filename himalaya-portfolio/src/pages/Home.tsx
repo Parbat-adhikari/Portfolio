@@ -18,7 +18,6 @@ import SectionHeading from "../components/SectionHeading";
 import MagneticButton from "../components/MagneticButton";
 import AnimatedCounter from "../components/AnimatedCounter";
 
-/* Staggered reveal for the hero words on load. */
 const heroParent = {
   hidden: {},
   show: { transition: { staggerChildren: 0.09, delayChildren: 0.1 } },
@@ -36,7 +35,7 @@ const charChild = {
   show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] } },
 };
 
-export default function Home() { 
+export default function Home() {
   const reduce = useReducedMotion();
   useSEO({
     title: `${profile.name} — Technology, Business & Continuous Learning`,
@@ -61,7 +60,7 @@ export default function Home() {
           aria-hidden
         />
 
-       {/* Big animated name */}
+        {/* Big animated name */}
         <div className="container-page relative mb-10">
           <motion.h1
             variants={reduce ? undefined : charParent}
@@ -85,7 +84,11 @@ export default function Home() {
 
         <div className="container-page relative">
           <div className="grid items-center gap-12 lg:grid-cols-[1.5fr_auto]">
-
+            <motion.div
+              variants={reduce ? undefined : heroParent}
+              initial={reduce ? false : "hidden"}
+              animate="show"
+            >
               <motion.p
                 variants={heroChild}
                 className="mt-8 max-w-prose text-fluid-lead leading-relaxed text-slate text-pretty"
@@ -119,7 +122,7 @@ export default function Home() {
                     { href: social.linkedin, Icon: Linkedin, label: "LinkedIn" },
                     { href: social.website, Icon: Globe, label: "Website" },
                   ].map(({ href, Icon, label }) => (
-                    <a
+                    
                       key={label}
                       href={href}
                       target="_blank"
@@ -157,7 +160,6 @@ export default function Home() {
                   </div>
                 )}
               </div>
-              {/* available chip */}
               {profile.available && (
                 <div className="absolute -bottom-4 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full border border-cloud bg-snow px-4 py-2 text-xs font-medium shadow-sm">
                   <span className="relative flex h-2 w-2">
@@ -326,7 +328,7 @@ export default function Home() {
           <Reveal>
             <span className="eyebrow">Philosophy</span>
             <blockquote className="mx-auto mt-6 max-w-3xl font-display text-3xl font-light leading-snug text-ink text-balance sm:text-4xl">
-              “{profile.philosophy}”
+              "{profile.philosophy}"
             </blockquote>
           </Reveal>
         </div>
