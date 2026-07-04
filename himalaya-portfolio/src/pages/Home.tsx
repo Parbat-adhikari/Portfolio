@@ -129,7 +129,6 @@ export default function Home() {
                       rel="noreferrer"
                       aria-label={label}
                       className="text-slate transition-colors hover:text-ink"
-                    >
                       <Icon size={18} />
                     </a>
                   ))}
